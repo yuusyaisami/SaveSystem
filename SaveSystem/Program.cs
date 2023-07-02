@@ -13,6 +13,9 @@ namespace SaveSystem
         {
             Filec.WriteLine("hello.txt", "へろーーーーーーー🏠", 2);
             Filec.WriteLine("hello.txt", "へろーーーーーーー🚓", 4);
+            string str = Filec.ReadLine("hello.txt", 2);
+            Console.WriteLine(str);
+            Console.ReadKey();
         }
     }
 }

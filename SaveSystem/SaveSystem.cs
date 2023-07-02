@@ -28,12 +28,12 @@ namespace SaveSystem
             StreamReader sr = new StreamReader(file_path, Encoding.GetEncoding("UTF-8"));
             while (sr.Peek() != -1)
             {
-                if (Readline == line_index)
+                str = sr.ReadLine();
+                if(Readline == line_index)
                 {
-                    str = sr.ReadLine();
                     break;
                 }
-                line_index++;
+                Readline++;
             }
             sr.Close();
 
