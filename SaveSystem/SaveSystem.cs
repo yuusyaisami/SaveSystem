@@ -2,7 +2,7 @@
  * 作成者  : Yuisami
  * 目的    : セーブ機能を簡単に搭載する
  * めも    : 暗号化はされていない
- * version : v1.0.0 
+ * version : v1.1.0 
  */
 using System;
 using System.Collections;
@@ -129,6 +129,11 @@ namespace SaveSystem
             save_data[save_index] = data; //新しく書き入れるデータを入れる
             WriteTextFile(file_path);
         }
+        /// <summary>
+        /// 指定されたデータと名前を削除する
+        /// </summary>
+        /// <param name="file_path"></param>
+        /// <param name="data_name"></param>
         public static void DeleteLine(string file_path, string data_name)
         {
             string name = data_name, data = ""; int index = 0;
@@ -140,6 +145,10 @@ namespace SaveSystem
             }
             WriteTextFile(file_path);//save_nameとsave_dataをテキストファイルに保存する
         }
+        /// <summary>
+        /// すべてのデータと名前を削除する
+        /// </summary>
+        /// <param name="file_path"></param>
         public static void ClearLine(string file_path)
         {
             if (File.Exists(file_path))
